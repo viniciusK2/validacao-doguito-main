@@ -2,10 +2,10 @@ import {valida} from "./validacao.js";
 
 const inputs = document.querySelectorAll('input');/*Com o querySelector all estamos querendo pegar todos os 
 inputs e para isso podemos passar a tag como parâmetro. */
-
+/*Dentro desse laço forEach estamos tendo acesso a todos os input por isso que colocamos a máscara dentro dela, não faria sentido colocar dentro de validação porque essa máscara não faz nenhuma validção, essa é a forma mais simplificadda.*/
 inputs.forEach(input => {
      //Para obter essa máscara acessamos o github do codemarcos, pesquisamos por simpleMaskMoney.
-    //Criamos um if que verifica se o campo que está sendo digitado é o do preço, se for iremos exevutar o if que recebe uma função SimpleMaskMoney que recebe dois parâmetros input e os argumentos são objetos, os argumentos irão definir a formatação da máscara.
+    /*Criamos um if que verifica se o campo que está sendo digitado é o do preço, se for iremos exevutar o if que recebe uma função SimpleMaskMoney que recebe dois parâmetros input e os argumentos são objetos, os argumentos irão definir a formatação da máscara.*/
     if(input.dataset.tipo === 'preco'){
         SimpleMaskMoney.setMask(input, {
             // afterFormat(e) { console.log('afterFormat', e); }, Não queremos um console.log por isso tiramos.
@@ -22,12 +22,12 @@ inputs.forEach(input => {
     }
 
 
-    //Antes de ocorrer o evento listener vou executar uma condição que irá verificar se o input é o do preço
+    /*Antes de ocorrer o evento listener vou executar uma condição que irá verificar se o input é o do preço e irá aplicar a máscara*/
     input.addEventListener('blur', (evento) => {
         valida(evento.target)
     })
     /*Fazemos um laço forEach pegando o valor do input e fazendo uma arow funciton que recebe o input com um
     evento blur, que é quando o campo perde o foco e como segundo parâmetro passamos o evento que recebe também
-    uma arow funtion que recebe a funçã valida que recebe como parâmetro o evento.target que verifica qual 
+    uma arow funtion que recebe a função valida que recebe como parâmetro o evento.target que verifica qual 
     elemento foi clicado*/
 })
