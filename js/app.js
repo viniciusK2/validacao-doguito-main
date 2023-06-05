@@ -4,7 +4,7 @@ const inputs = document.querySelectorAll('input');/*Com o querySelector all esta
 inputs e para isso podemos passar a tag como parâmetro. */
 
 inputs.forEach(input => {
-     //Para obter essa máscara acessamos o github do codemarcos.
+     //Para obter essa máscara acessamos o github do codemarcos, pesquisamos por simpleMaskMoney.
     //Criamos um if que verifica se o campo que está sendo digitado é o do preço, se for iremos exevutar o if que recebe uma função SimpleMaskMoney que recebe dois parâmetros input e os argumentos são objetos, os argumentos irão definir a formatação da máscara.
     if(input.dataset.tipo === 'preco'){
         SimpleMaskMoney.setMask(input, {
